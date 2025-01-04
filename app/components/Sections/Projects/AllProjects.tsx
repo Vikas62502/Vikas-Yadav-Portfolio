@@ -39,7 +39,7 @@ const AllProjects = () => {
 
   return (
     <div className={styles.allProjects}>
-      <div className={styles.tagButtons}>
+      <div className={`${styles.tagButtons} max-w-7xl mx-auto`}>
         <button
           onClick={() => toggleAllTags()}
           className={styles.buttonTag}

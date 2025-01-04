@@ -56,7 +56,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.climateMitigate.src,
       },
     ],
-    liveLink: "https://cuvette-assignment-iota.vercel.app/",
-    gitHubLink: "https://github.com/SujeetYT/Cuvette-Assignment",
+    liveLink: "https://cm-v2.onrender.com/carbon-credit-marketplace",
+    gitHubLink: "",
   },
 ];
