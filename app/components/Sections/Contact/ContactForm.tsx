@@ -32,16 +32,12 @@ const ContactForm = () => {
     try {
       const url = "/api/sendMail";
       const body = formData;
-      const response = await axios.post(url, body, {
+      await axios.post(url, body, {
         headers: {
           "Content-Type": "application/json",
         }
       })
       setIsSuccess(true)
-      console.log("response: ", response);
-      if (response.status === 200) {
-        alert("Email sent");
-      }
     } catch (error) {
       console.log("error: ", error);
 
@@ -68,7 +64,7 @@ const ContactForm = () => {
         <div>
           <textarea ref={messageRef} placeholder="Message" rows={3} className={styles.input} ></textarea>
         </div>
-        <button type="submit" className={styles.submitButton}>{loading ? "Please wait ..." : "Send"}</button>
+        <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? "Please wait ..." : "Send"}</button>
       </form>
       <div >
         <SuccessModal isOpen={isSuccess} onClose={() => setIsSuccess(false)} />
