@@ -9,7 +9,7 @@ type SuccessModalProps = {
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
     setTimeout(() => {
         onClose();
-    }, 10000);
+    }, 7500);
     if (!isOpen) return null;
 
     return (
