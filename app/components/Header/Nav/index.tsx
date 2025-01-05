@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { NavFooterData, NavData } from "../../../data/NavData";
 import styles from "./style.module.css";
 import { motion } from "framer-motion";
@@ -54,14 +55,19 @@ const slideIn = {
   },
 }
 
-const index = () => {
+interface NavProps {
+  isActive: boolean;
+  setIsActive: (isActive: boolean) => void;
+}
+
+const index: FC<NavProps> = ({ isActive, setIsActive }) => {
   return (
-    <div className={styles.nav}>
+    <div className={`${styles.nav}`}>
       <div className={styles.body}>
         {
           NavData.map((item, i) => {
             return (
-              <div className={styles.linkContainer} key={i}>
+              <div className={styles.linkContainer} key={i} onClick={() => setIsActive(!isActive)}>
                 <motion.div
                   custom={i}
                   className={styles.navItem}

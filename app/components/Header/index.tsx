@@ -63,7 +63,7 @@ const index = () => {
           animate={isActive ? "open" : "closed"}
         >
           <AnimatePresence>
-            {isActive && <Nav />}
+            {isActive && <Nav isActive={isActive} setIsActive={setIsActive} />}
           </AnimatePresence>
         </motion.div>
         <Button isActive={isActive} setIsActive={setIsActive} />

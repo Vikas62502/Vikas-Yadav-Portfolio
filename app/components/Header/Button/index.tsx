@@ -10,7 +10,7 @@ interface ButtonProps {
 const index: React.FC<ButtonProps> = ({ isActive, setIsActive }) => {
   return (
     <div
-      className={styles.button}
+      className={`${styles.button}`}
       onClick={() => setIsActive(!isActive)}
     >
       <motion.div

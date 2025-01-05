@@ -1,7 +1,7 @@
 const NavData = [
   {
     title: 'Home',
-    href: '/'
+    href: '#hero'
   },
   {
     title: 'About',
@@ -28,11 +28,11 @@ const NavData = [
 const NavFooterData = [
   {
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/sujeetyt/'
+    href: 'https://www.linkedin.com/in/vikasyadav62/'
   },
   {
     title: 'GitHub',
-    href: 'https://github.com/SujeetYT/'
+    href: 'https://github.com/Vikas62502'
   },
 ]
 

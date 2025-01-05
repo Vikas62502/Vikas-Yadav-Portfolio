@@ -62,6 +62,7 @@ const AllProjects = () => {
           ))
         }
       </div>
+
       {
         filteredItems.length > 0 ? (
           <div className={styles.project}>
@@ -76,6 +77,7 @@ const AllProjects = () => {
                   images={project.images}
                   liveLink={project.liveLink}
                   gitHubLink={project.gitHubLink}
+                  TechStack={project.TechStack}
                 />
               ))
             }
