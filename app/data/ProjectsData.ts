@@ -47,7 +47,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.greenOrigin.src,
       },
     ],
-    liveLink: "https://www.greenorigin.org/dashboard?active=dashboard",
+    liveLink: "https://www.greenorigin.org/",
     gitHubLink: "",
   },
   {
@@ -95,7 +95,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.matarAi.src,
       },
     ],
-    liveLink: "https://matar-ai.vercel.app/",
+    liveLink: "https://matar.ai/",
     gitHubLink: "",
   },
   {
@@ -111,7 +111,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.matarNFT.src,
       },
     ],
-    liveLink: "https://matar-nft.vercel.app/",
+    liveLink: "https://nft.matar.ai/",
     gitHubLink: "",
   },
   {
@@ -127,7 +127,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.xertf.src,
       },
     ],
-    liveLink: "https://xertf.vercel.app/",
+    liveLink: "https://xrp-etf-token-frontend.vercel.app/",
     gitHubLink: "",
   },
   {
@@ -143,7 +143,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.xoVisuals.src,
       },
     ],
-    liveLink: "https://xo-visuals.vercel.app/",
+    liveLink: "https://xovisuals.in/",
     gitHubLink: "",
   },
   {
@@ -159,7 +159,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
         url: images.pokiToken.src,
       },
     ],
-    liveLink: "https://poki-token.vercel.app/",
+    liveLink: "https://www.pokitoken.com/",
     gitHubLink: "",
   }
 ];

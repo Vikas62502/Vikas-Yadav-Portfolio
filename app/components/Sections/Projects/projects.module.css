@@ -215,3 +215,19 @@
     min-height: 100%;
   }
 }
+
+
+.button2{
+  margin-top: 1rem;
+  padding: .75rem 1.25rem;
+  background-color: crimson;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}

@@ -7,14 +7,14 @@ interface StrokeIconProps {
   rotate?: number;
 }
 
-export const ArrowIcon:FC<StrokeIconProps> = ({size="20", fill="none", color="currentColor", rotate="0"}) => {
+export const ArrowIcon: FC<StrokeIconProps> = ({ size = "20", fill = "none", color = "currentColor", rotate = "0" }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
       viewBox="0 0 24 24"
       fill={fill}
-      style={{transform: `rotate(${rotate}deg)`}}
+      style={{ transform: `rotate(${rotate}deg)` }}
       stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
@@ -28,18 +28,18 @@ export const ArrowIcon:FC<StrokeIconProps> = ({size="20", fill="none", color="cu
 };
 
 
-export const SquareArrowOutUpRight:FC<StrokeIconProps> = ({size="20", fill="none", color="currentColor"}) => {
+export const SquareArrowOutUpRight: FC<StrokeIconProps> = ({ size = "20", fill = "none", color = "currentColor" }) => {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width={size} 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
       height={size}
-      viewBox="0 0 24 24" 
+      viewBox="0 0 24 24"
       fill={fill}
-      stroke={color} 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-square-arrow-out-up-right"
     >
       <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
@@ -49,23 +49,39 @@ export const SquareArrowOutUpRight:FC<StrokeIconProps> = ({size="20", fill="none
   );
 }
 
-export const DownloadIcon:FC<StrokeIconProps> = ({size="20", fill="none", color="currentColor"}) => {
+export const DownloadIcon: FC<StrokeIconProps> = ({ size = "20", fill = "none", color = "currentColor" }) => {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width={size} 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
       height={size}
-      viewBox="0 0 24 24" 
+      viewBox="0 0 24 24"
       fill={fill}
-      stroke={color} 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-arrow-down-to-line"
     >
-      <path d="M12 17V3"/>
-      <path d="m6 11 6 6 6-6"/>
-      <path d="M19 21H5"/>
+      <path d="M12 17V3" />
+      <path d="m6 11 6 6 6-6" />
+      <path d="M19 21H5" />
     </svg>
+  );
+};
+
+export const UpArrowIcon: FC<StrokeIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevrons-down"><path d="m7 6 5 5 5-5" /><path d="m7 13 5 5 5-5" /></svg>
+  );
+};
+
+
+
+export const DownArrowIcon: FC<StrokeIconProps> = ({ size = "20", fill = "none", color = "currentColor" }) => {
+  return (
+    <div className="rotate-180">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevrons-down"><path d="m7 6 5 5 5-5" /><path d="m7 13 5 5 5-5" /></svg>
+    </div>
   );
 };

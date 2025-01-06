@@ -4,10 +4,13 @@ import { ProjectsData } from "@/app/data/ProjectsData";
 import styles from "./projects.module.css";
 import { useState } from "react";
 import Project from "./Project";
+import { DownArrowIcon, DownloadIcon, UpArrowIcon } from "@/app/assets/Icons";
 
 const AllProjects = () => {
   // getting all tags from the data
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [showNext, setShowNext] = useState<number>(3);
+  console.log(showNext, "<--- show next");
   const allTags = Array.from(new Set(ProjectsData.flatMap((item) => item.tags)));
 
   // Handle toggling of tags
@@ -35,7 +38,14 @@ const AllProjects = () => {
     setSelectedTags([]);
   };
 
-  // console.log(selectedTags);
+  const handleShowMoreProjects = () => {
+    if (ProjectsData?.length > showNext) {
+      setShowNext(showNext + 3);
+    }
+    if (showNext === ProjectsData?.length) {
+      setShowNext(showNext - 6);
+    }
+  };
 
   return (
     <div className={styles.allProjects}>
@@ -64,10 +74,10 @@ const AllProjects = () => {
       </div>
 
       {
-        filteredItems.length > 0 ? (
+        filteredItems?.length > 0 ? (
           <div className={styles.project}>
             {
-              filteredItems.map((project) => (
+              filteredItems?.slice(0, showNext)?.map((project) => (
                 <Project
                   key={project.id}
                   id={project.id}
@@ -81,6 +91,10 @@ const AllProjects = () => {
                 />
               ))
             }
+            <div className={styles.button2} onClick={handleShowMoreProjects}>
+              <span>{showNext === ProjectsData?.length ? "Collapse" : "Show More"}</span>
+              {showNext !== ProjectsData?.length ? <UpArrowIcon /> : <DownArrowIcon />}
+            </div>
           </div>
         ) : (
           <div className={styles.notFound}>
