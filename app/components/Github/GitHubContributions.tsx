@@ -18,12 +18,19 @@ interface ContributionData {
 export default function GithubContributionGraph() {
     const [contributionData, setContributionData] = useState<ContributionData>()
     const [selectedYear, setSelectedYear] = useState<number>(2024) // Default year to 2024
+    const [isLoading, setIsLoading] = useState<boolean>(false) // Loading state
 
     const getContribution = async (year: number) => {
-        const response = await fetch(`https://github-contributions-api.jogruber.de/v4/Vikas62502?y=${year}`)
-        const data = await response.json()
-        setContributionData(data)
-        console.log(data)
+        setIsLoading(true) // Set loading to true
+        try {
+            const response = await fetch(`https://github-contributions-api.jogruber.de/v4/Vikas62502?y=${year}`)
+            const data = await response.json()
+            setContributionData(data)
+        } catch (error) {
+            console.error('Error fetching contributions:', error)
+        } finally {
+            setIsLoading(false) // Set loading to false
+        }
     }
 
     useEffect(() => {
@@ -47,13 +54,12 @@ export default function GithubContributionGraph() {
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-    // Helper function to generate grid structure for each month
     const generateGrid = (monthIndex: number) => {
-        const firstDayOfMonth = new Date(selectedYear, monthIndex, 1).getDay() // Get the first day of the month
-        const daysInMonth = new Date(selectedYear, monthIndex + 1, 0).getDate() // Get the total number of days in the month
+        const firstDayOfMonth = new Date(selectedYear, monthIndex, 1).getDay()
+        const daysInMonth = new Date(selectedYear, monthIndex + 1, 0).getDate()
 
-        const totalCells = 42 // 6 rows of 7 days (42 cells total to fit the whole month)
-        const emptyDaysBefore = firstDayOfMonth // How many empty days before the first day of the month
+        const totalCells = 42
+        const emptyDaysBefore = firstDayOfMonth
 
         return Array.from({ length: totalCells }, (_, index) => {
             const dayOfMonth = index - emptyDaysBefore + 1
@@ -66,45 +72,49 @@ export default function GithubContributionGraph() {
             <div className="rounded-2xl border border-[#D9004C] p-6 bg-black w-full">
                 <h2 className="text-3xl font-bold mb-6 text-[#D9004C]">Github&apos;s Stats</h2>
 
-                <div className="relative">
-                    {/* Contribution grid */}
-                    <div className="grid grid-cols-7 gap-1">
-                        {months.map((_, monthIndex) => (
-                            <div key={monthIndex} className="space-y-2">
-                                <div className="text-center text-sm text-gray-400">{months[monthIndex]}</div>
-                                <div className="grid grid-cols-7 gap-1">
-                                    {generateGrid(monthIndex).map((day, index) => {
-                                        const contributionDay = contributionData?.contributions.find(contrib => {
-                                            const contribDate = new Date(contrib.date)
-                                            return contribDate.getDate() === day && contribDate.getMonth() === monthIndex
-                                        })
-                                        return (
-                                            <div
-                                                key={index}
-                                                className={`w-3 h-3 rounded-sm ${contributionDay ? getColorClass(contributionDay.level) : 'bg-[#2D2D2D]'}`}
-                                                title={day ? (contributionDay ? `${contributionDay.count} contributions on ${formatDate(contributionDay.date)}` : '') : ''}
-                                            />
-                                        )
-                                    })}
+                {isLoading ? (
+                    <div className="text-center text-white">Loading contributions...</div>
+                ) : (
+                    <div className="relative">
+                        {/* Contribution grid */}
+                        <div className="grid grid-cols-7 gap-1">
+                            {months.map((_, monthIndex) => (
+                                <div key={monthIndex} className="space-y-2">
+                                    <div className="text-center text-sm text-gray-400">{months[monthIndex]}</div>
+                                    <div className="grid grid-cols-7 gap-1">
+                                        {generateGrid(monthIndex).map((day, index) => {
+                                            const contributionDay = contributionData?.contributions.find(contrib => {
+                                                const contribDate = new Date(contrib.date)
+                                                return contribDate.getDate() === day && contribDate.getMonth() === monthIndex
+                                            })
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className={`w-3 h-3 rounded-sm ${contributionDay ? getColorClass(contributionDay.level) : 'bg-[#2D2D2D]'}`}
+                                                    title={day ? (contributionDay ? `${contributionDay.count} contributions on ${formatDate(contributionDay.date)}` : '') : ''}
+                                                />
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
 
-                    {/* Legend */}
-                    <div className="flex items-center justify-end mt-4 text-sm text-gray-400 gap-2">
-                        <span>{contributionData?.total[selectedYear.toString()] || 0} contributions in {selectedYear}</span>
-                        <div className="flex items-center gap-1 ml-4">
-                            <span>Less</span>
-                            <div className="w-3 h-3 bg-[#2D2D2D] rounded-sm" />
-                            <div className="w-3 h-3 bg-[#9B1B30] rounded-sm" />
-                            <div className="w-3 h-3 bg-[#D9004C] rounded-sm" />
-                            <div className="w-3 h-3 bg-[#E40057] rounded-sm" />
-                            <div className="w-3 h-3 bg-[#FF4678] rounded-sm" />
-                            <span>More</span>
+                        {/* Legend */}
+                        <div className="flex items-center justify-end mt-4 text-sm text-gray-400 gap-2">
+                            <span>{contributionData?.total[selectedYear.toString()] || 0} contributions in {selectedYear}</span>
+                            <div className="flex items-center gap-1 ml-4">
+                                <span>Less</span>
+                                <div className="w-3 h-3 bg-[#2D2D2D] rounded-sm" />
+                                <div className="w-3 h-3 bg-[#9B1B30] rounded-sm" />
+                                <div className="w-3 h-3 bg-[#D9004C] rounded-sm" />
+                                <div className="w-3 h-3 bg-[#E40057] rounded-sm" />
+                                <div className="w-3 h-3 bg-[#FF4678] rounded-sm" />
+                                <span>More</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
 
             {/* Year Tabs */}
