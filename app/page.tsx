@@ -12,8 +12,6 @@ import Footer from "@/app/components/Sections/Footer";
 import Loader from "@/app/components/Loader/Loader";
 import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import GitHubStats from "./components/Github/GithubStats";
-import GitHubContributions from "./components/Github/GitHubContributions";
 import GithubContributionGraph from "./components/Github/GitHubContributions";
 
 export default function Home() {
@@ -43,7 +41,6 @@ export default function Home() {
         <Projects />
         <GithubContributionGraph />
         <Contact />
-        {/* <GitHubStats /> */}
         <Footer />
       </div>)}
     </>

@@ -1,8 +1,9 @@
 export const Skills = [
+  "React Native",
   "Next.js",
   "React.Js",
   "Node.js",
-  "Express",
+  "Express js",
   "MongoDB",
   "Redis",
   "TypeScript",
@@ -11,8 +12,14 @@ export const Skills = [
   "REST API",
   "WebSockets",
   "PostgreSQL",
+  "MYSQL",
   "Git",
   "GitHub",
   "Figma",
-
+  "Tailwind CSS",
+  "AWS",
+  "CI/CD",
+  "EC2",
+  "S3",
+  "ECS"
 ]

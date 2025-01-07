@@ -8,7 +8,7 @@ import React, { FC } from "react";
 const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, TechStack }) => {
   return (
     <Link href={liveLink} target="_blank">
-      <div key={id} className={`${styles.projectBox} hover:shadow-xl hover:scale-105 transition-transform duration-300`}>
+      <div key={id} className={`${styles.projectBox} hover:shadow-xl hover:scale-105 hover:my-3 transition-transform duration-300`}>
         <div className={styles.aboutProject}>
           <div className={styles.projectHeader}>
             <h2 className={styles.title}>{title}</h2>

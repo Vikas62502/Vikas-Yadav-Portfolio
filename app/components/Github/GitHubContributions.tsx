@@ -68,7 +68,7 @@ export default function GithubContributionGraph() {
     }
 
     return (
-        <div className="w-full max-w-6xl mx-auto p-6 flex">
+        <div className="w-full max-w-6xl mx-auto p-6 flex flex-col md:flex-row space-y-6">
             <div className="rounded-2xl border border-[#D9004C] p-6 bg-black w-full">
                 <h2 className="text-3xl font-bold mb-6 text-[#D9004C]">Github&apos;s Stats</h2>
 
@@ -77,11 +77,11 @@ export default function GithubContributionGraph() {
                 ) : (
                     <div className="relative">
                         {/* Contribution grid */}
-                        <div className="grid grid-cols-7 gap-1">
+                        <div className="grid grid-cols-2 md:grid-cols-7 gap-1">
                             {months.map((_, monthIndex) => (
-                                <div key={monthIndex} className="space-y-2">
+                                <div key={monthIndex} className="space-y-2 space-x-2">
                                     <div className="text-center text-sm text-gray-400">{months[monthIndex]}</div>
-                                    <div className="grid grid-cols-7 gap-1">
+                                    <div className="grid grid-cols-7 gap-2 md:gap-1">
                                         {generateGrid(monthIndex).map((day, index) => {
                                             const contributionDay = contributionData?.contributions.find(contrib => {
                                                 const contribDate = new Date(contrib.date)

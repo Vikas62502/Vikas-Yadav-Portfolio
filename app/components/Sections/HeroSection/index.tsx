@@ -27,7 +27,7 @@ const index = () => {
                   <ArrowIcon />
                 </div>
               </Link>
-              <Link target="_blank" href={resumeLink}>
+              <Link href={`./Vikas_Yadav_MAIT_1yr_Full_Stack.pdf`} target="_blank" download>
                 <div className={styles.button2}>
                   <span>Get Resume</span>
                   <DownloadIcon />

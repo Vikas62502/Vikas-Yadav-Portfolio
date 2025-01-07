@@ -17,12 +17,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${leageSpartan.className}`}>
-        <AnimatedCursor
-          outerSize={40}
+        <div className="sm:block hidden"> <AnimatedCursor
+          outerSize={45}
           innerSize={20}
           innerScale={1.1}
           innerStyle={{ background: 'white' }}
-          outerStyle={{ background: '#DC143C' }}
+          outerStyle={{ background: '#ed143d6e' }}
           outerAlpha={0.2}
           outerScale={1.1}
           clickables={[
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             '.link',
             '.btn',
           ]}
-        />
+        /></div>
 
         < Header />
         {children}
