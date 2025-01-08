@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description: "Full Stack Developer",
   openGraph: {
     title: "Vikas Yadav's Portfolio",
-    description: "Explore Vikas Yadav's Full Stack Developer portfolio and projects.",
-    url: "https://www.vikasyadev.tech/", // Replace with your actual URL
+    description: "Full Stack Developer | MERN | Blockchain | Web3",
+    url: "https://www.vikasyadev.tech/",
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/dglhi9kl4/image/upload/v1736339796/hpqzjoyrjhfqkpenvquf.jpg",
+        url: "https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg",
         width: 1200,
         height: 630,
         alt: "Vikas Yadav's Profile Image",
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dglhi9kl4/image/upload/v1736339796/hpqzjoyrjhfqkpenvquf.jpg"
+          content="https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
