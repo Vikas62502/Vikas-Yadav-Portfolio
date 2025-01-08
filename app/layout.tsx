@@ -3,6 +3,7 @@ import Header from "@/app/components/Header";
 import { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import CursorPointerAnimated from "./components/CursorPointerAnimated";
+import { Analytics } from "@vercel/analytics/next";
 
 const leageSpartan = League_Spartan({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           property="og:description"
           content="Explore Vikas Yadav's Full Stack Developer portfolio and projects."
         />
-        <meta property="og:url" content="https://your-website-url.com" />
+        <meta property="og:url" content="https://www.vikasyadev.tech/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
