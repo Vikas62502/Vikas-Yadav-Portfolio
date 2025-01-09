@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import CursorPointerAnimated from "./components/CursorPointerAnimated";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const leageSpartan = League_Spartan({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
