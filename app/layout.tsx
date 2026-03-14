@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vikas Yadav's Portfolio",
     description: "Full Stack Developer | MERN | Blockchain | Web3",
-    url: "https://www.vikasyadev.tech/",
+    url: "http://vikasyadav.online/",
     type: "website",
     images: [
       {

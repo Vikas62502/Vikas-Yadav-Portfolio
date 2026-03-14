@@ -119,7 +119,7 @@ export default function GithubContributionGraph() {
 
             {/* Year Tabs */}
             <div className="flex flex-col space-y-2 ml-6">
-                {[2021, 2022, 2023, 2024, 2025].map((year) => (
+                {[2022, 2023, 2024, 2025, 2026].map((year) => (
                     <button
                         key={year}
                         onClick={() => setSelectedYear(year)}
