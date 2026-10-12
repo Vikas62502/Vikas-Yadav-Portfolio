@@ -17,7 +17,9 @@ interface ContributionData {
 
 export default function GithubContributionGraph() {
     const [contributionData, setContributionData] = useState<ContributionData>()
-    const [selectedYear, setSelectedYear] = useState<number>(2024) // Default year to 2024
+    const currentYear = new Date().getFullYear()
+    const years = Array.from({ length: currentYear - 2021 }, (_, i) => 2022 + i)
+    const [selectedYear, setSelectedYear] = useState<number>(currentYear)
     const [isLoading, setIsLoading] = useState<boolean>(false) // Loading state
 
     const getContribution = async (year: number) => {
@@ -68,20 +70,20 @@ export default function GithubContributionGraph() {
     }
 
     return (
-        <div className="w-full max-w-6xl mx-auto p-6 flex flex-col md:flex-row space-y-6">
-            <div className="rounded-2xl border border-[#D9004C] p-6 bg-black w-full">
-                <h2 className="text-3xl font-bold mb-6 text-[#D9004C]">Github&apos;s Stats</h2>
+        <div className="w-full max-w-6xl mx-auto px-4 py-6 md:p-6 flex flex-col-reverse lg:flex-row gap-4 lg:gap-6">
+            <div className="rounded-2xl border border-[#D9004C] p-4 md:p-6 bg-black w-full">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#D9004C]">GitHub Contributions</h2>
 
                 {isLoading ? (
                     <div className="text-center text-white">Loading contributions...</div>
                 ) : (
                     <div className="relative">
                         {/* Contribution grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-7 gap-1">
+                        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-3 gap-y-4">
                             {months.map((_, monthIndex) => (
-                                <div key={monthIndex} className="space-y-2 space-x-2">
+                                <div key={monthIndex} className="flex flex-col items-center space-y-2">
                                     <div className="text-center text-sm text-gray-400">{months[monthIndex]}</div>
-                                    <div className="grid grid-cols-7 gap-2 md:gap-1">
+                                    <div className="grid grid-cols-7 gap-[3px] sm:gap-1">
                                         {generateGrid(monthIndex).map((day, index) => {
                                             const contributionDay = contributionData?.contributions.find(contrib => {
                                                 const contribDate = new Date(contrib.date)
@@ -90,7 +92,7 @@ export default function GithubContributionGraph() {
                                             return (
                                                 <div
                                                     key={index}
-                                                    className={`w-3 h-3 rounded-sm ${contributionDay ? getColorClass(contributionDay.level) : 'bg-[#2D2D2D]'}`}
+                                                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-sm ${contributionDay ? getColorClass(contributionDay.level) : 'bg-[#2D2D2D]'}`}
                                                     title={day ? (contributionDay ? `${contributionDay.count} contributions on ${formatDate(contributionDay.date)}` : '') : ''}
                                                 />
                                             )
@@ -101,9 +103,9 @@ export default function GithubContributionGraph() {
                         </div>
 
                         {/* Legend */}
-                        <div className="flex items-center justify-end mt-4 text-sm text-gray-400 gap-2">
+                        <div className="flex flex-wrap items-center justify-center sm:justify-end mt-6 text-sm text-gray-400 gap-2">
                             <span>{contributionData?.total[selectedYear.toString()] || 0} contributions in {selectedYear}</span>
-                            <div className="flex items-center gap-1 ml-4">
+                            <div className="flex items-center gap-1 sm:ml-4">
                                 <span>Less</span>
                                 <div className="w-3 h-3 bg-[#2D2D2D] rounded-sm" />
                                 <div className="w-3 h-3 bg-[#9B1B30] rounded-sm" />
@@ -118,12 +120,12 @@ export default function GithubContributionGraph() {
             </div>
 
             {/* Year Tabs */}
-            <div className="flex flex-col space-y-2 ml-6">
-                {[2022, 2023, 2024, 2025, 2026].map((year) => (
+            <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto">
+                {[...years].reverse().map((year) => (
                     <button
                         key={year}
                         onClick={() => setSelectedYear(year)}
-                        className={`px-4 py-2 rounded-lg text-white ${selectedYear === year ? 'bg-[#D9004C]' : 'bg-[#2D2D2D]'} hover:bg-[#9B1B30]`}
+                        className={`shrink-0 px-4 py-2 rounded-lg text-white ${selectedYear === year ? 'bg-[#D9004C]' : 'bg-[#2D2D2D]'} hover:bg-[#9B1B30]`}
                     >
                         {year}
                     </button>

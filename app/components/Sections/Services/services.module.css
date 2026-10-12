@@ -43,8 +43,8 @@
 
 .sectionHead p {
   text-align: center;
-  color: #fff6;
-  font-weight: 700;
+  color: var(--muted);
+  font-weight: 500;
   font-size: .875rem;
   line-height: 1.25rem;
   padding-bottom: 2.5rem;
@@ -103,7 +103,7 @@
 }
 
 .heading p:nth-child(2) {
-  color: #bfbfc680;
+  color: var(--muted);
   font-weight: 600;
   font-size: .875rem;
   line-height: 1.25rem;

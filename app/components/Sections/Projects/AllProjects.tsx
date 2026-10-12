@@ -4,13 +4,12 @@ import { ProjectsData } from "@/app/data/ProjectsData";
 import styles from "./projects.module.css";
 import { useState } from "react";
 import Project from "./Project";
-import { DownArrowIcon, DownloadIcon, UpArrowIcon } from "@/app/assets/Icons";
+import { DownArrowIcon, UpArrowIcon } from "@/app/assets/Icons";
 
 const AllProjects = () => {
   // getting all tags from the data
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showNext, setShowNext] = useState<number>(3);
-  console.log(showNext, "<--- show next");
   const allTags = Array.from(new Set(ProjectsData.flatMap((item) => item.tags)));
 
   // Handle toggling of tags
@@ -38,13 +37,10 @@ const AllProjects = () => {
     setSelectedTags([]);
   };
 
+  const allShown = showNext >= filteredItems.length;
+
   const handleShowMoreProjects = () => {
-    if (ProjectsData?.length > showNext) {
-      setShowNext(showNext + 3);
-    }
-    if (showNext === ProjectsData?.length) {
-      setShowNext(showNext - 6);
-    }
+    setShowNext(allShown ? 3 : showNext + 3);
   };
 
   return (
@@ -88,13 +84,17 @@ const AllProjects = () => {
                   liveLink={project.liveLink}
                   gitHubLink={project.gitHubLink}
                   TechStack={project.TechStack}
+                  highlights={project.highlights}
+                  associatedWith={project.associatedWith}
                 />
               ))
             }
-            <div className={styles.button2} onClick={handleShowMoreProjects}>
-              <span>{showNext === ProjectsData?.length ? "Collapse" : "Show More"}</span>
-              {showNext !== ProjectsData?.length ? <UpArrowIcon /> : <DownArrowIcon />}
-            </div>
+            {filteredItems.length > 3 && (
+              <div className={styles.button2} onClick={handleShowMoreProjects}>
+                <span>{allShown ? "Collapse" : "Show More"}</span>
+                {allShown ? <DownArrowIcon /> : <UpArrowIcon />}
+              </div>
+            )}
           </div>
         ) : (
           <div className={styles.notFound}>

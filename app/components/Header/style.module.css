@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1rem;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -15,6 +15,46 @@
   font-size: 1rem;
   font-weight: 600;
   color: #bfbfc6;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  white-space: nowrap;
+}
+
+.header .logoMark {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .85rem;
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.resumeButton {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 .75rem;
+  white-space: nowrap;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #fafafa;
+  border: 1px solid #ffffff40;
+  border-radius: 25px;
+  background: #0b0b0e80;
+  backdrop-filter: blur(10px);
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.resumeButton:hover {
+  border-color: var(--accent);
+  background: #e11d4826;
 }
 
 .menuOption {
@@ -34,8 +74,20 @@
 }
 
 
+.resumeArrow {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .header {
     padding: 2rem 3rem;
+  }
+
+  .resumeButton {
+    padding: 0 1rem;
+  }
+
+  .resumeArrow {
+    display: inline;
   }
 }

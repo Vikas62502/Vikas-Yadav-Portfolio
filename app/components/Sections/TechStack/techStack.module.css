@@ -1,0 +1,124 @@
+.section {
+  width: 100%;
+  padding: 5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.blob {
+  width: 40%;
+  height: 40%;
+  background: conic-gradient(from 2.35rad, #dc143c, #0658f6);
+  filter: blur(120px);
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  opacity: 0.25;
+  user-select: none;
+  z-index: -1;
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionHead h3 {
+  color: #bfbfc6;
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.sectionHead p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #ffffff1f;
+  border-radius: 14px;
+  background: #bfbfc60d;
+  backdrop-filter: blur(20px);
+  transition: border-color .3s ease, transform .3s ease;
+}
+
+.card:hover {
+  border-color: #dc143c99;
+  transform: translateY(-4px);
+}
+
+.cardIndex {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .75rem;
+  color: crimson;
+}
+
+.card h4 {
+  margin-top: .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fafafa;
+}
+
+.card p {
+  margin-top: .25rem;
+  font-size: .9rem;
+  color: #bfbfc6b3;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.25rem;
+}
+
+.chips span {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .8rem;
+  padding: .3rem .75rem;
+  border: 1px solid #ffffff26;
+  border-radius: 6px;
+  background: #0b0b0e99;
+  color: #e4e4e8;
+}
+
+@media (min-width: 768px) {
+  .sectionHead h3 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .sectionHead p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

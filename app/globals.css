@@ -4,7 +4,9 @@
 
 :root {
   --background: #0b0b0e;
-  --foreground: #bfbfc6;
+  --foreground: #d4d4d8;
+  --muted: #a1a1aa;
+  --accent: #e11d48;
 }
 
 html {
@@ -14,9 +16,29 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-body), system-ui, sans-serif;
   /* overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4,
+[class*="heading"] > p:first-child,
+[class*="loaderBox"] h2 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+code, pre {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+section[id], div[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }
 
 * {
@@ -29,4 +51,11 @@ body {
 a{
   text-decoration: none;
   color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

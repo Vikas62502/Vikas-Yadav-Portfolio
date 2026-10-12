@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   min-height: 100vh;
-  padding: 5rem 2.5rem;
+  padding: 5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,8 +29,8 @@
 
 .sectionHead p {
   text-align: center;
-  color: #fff6;
-  font-weight: 700;
+  color: var(--muted);
+  font-weight: 500;
   font-size: .875rem;
   line-height: 1.25rem;
   padding-bottom: 2.5rem;
@@ -40,16 +40,20 @@
 
 .tagButtons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
+  overflow-x: auto;
+  padding-bottom: .5rem;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, black 85%, transparent);
 }
 
-
-
 .buttonTag {
-  padding: 10px 20px;
+  flex-shrink: 0;
+  padding: 6px 14px;
+  font-size: .875rem;
   color: #f1f1f1;
   border: 1px solid #fff6;
   border-radius: 50px;
@@ -93,12 +97,17 @@
   min-height: 500px;
   position: relative;
 
-  /* backdrop-filter: blur(3px); */
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.5);
+  background: rgba(20, 20, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  transition: border-color .3s ease, transform .3s ease;
 
+}
+
+.projectBox:hover {
+  border-color: rgba(225, 29, 72, 0.5);
 }
 
 .imageContainer {
@@ -142,11 +151,101 @@
 }
 
 .projectHeader p {
-  color: #f1f1f1;
+  color: #c4c4cc;
   font-size: 1rem;
-  line-height: 1.15rem;
+  line-height: 1.6rem;
   font-weight: 400;
   margin-top: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: .75rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  color: #fff;
+  background: rgba(220, 20, 60, 0.7);
+  padding: 2px 10px;
+  border-radius: 50px;
+  margin-bottom: .75rem;
+}
+
+.highlights {
+  margin-top: 1rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+  color: #f1f1f1;
+}
+
+.highlights li {
+  margin: .4rem 0;
+  line-height: 1.5rem;
+  color: #d4d4d8;
+}
+
+.highlights li::marker {
+  color: var(--accent);
+}
+
+.projectHeader .techStack {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .875rem;
+  line-height: 1.35rem;
+}
+
+.techStack span {
+  font-weight: 700;
+  color: #fff;
+}
+
+.codeWindow {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.codeWindowBar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #161b22;
+}
+
+.codeWindowBar span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+}
+
+.codeWindowBar span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.codeWindowBar span:nth-child(3) {
+  background: #27c93f;
+}
+
+.codeWindow pre {
+  padding: 1rem 1.25rem;
+  margin: 0;
+  overflow: auto;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .85rem;
+  line-height: 1.4rem;
+  color: #c9d1d9;
+}
+
+.codeKeyword {
+  color: #ff7b72;
+}
+
+.codeString {
+  color: #a5d6ff;
 }
 
 .projectButtons {
@@ -167,6 +266,11 @@
   border: 1px solid #ffffff66;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.projectButtons .primaryLink {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .notFound{
@@ -193,21 +297,54 @@
     padding-right: 1rem;
   }
 
+  .section {
+    padding: 5rem 2.5rem;
+  }
+
+  .tagButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    overflow-x: visible;
+    mask-image: none;
+  }
+
+  .buttonTag {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
   .projectBox {
-    flex-direction: row;
-    align-items: center;
+    max-width: 720px;
     min-height: auto;
-    max-width: 1080px;
   }
 
   .imageContainer {
-    width: 640px;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
   }
 
   .projectButtons {
     flex-direction: row;
     gap: 1rem;
+  }
+
+  .aboutProject {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectBox {
+    flex-direction: row;
+    align-items: center;
+    max-width: 1080px;
+  }
+
+  .imageContainer {
+    width: 55%;
+    flex-shrink: 0;
+    padding: 1rem;
   }
 
   .aboutProject {

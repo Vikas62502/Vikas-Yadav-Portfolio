@@ -12,7 +12,7 @@ export default function Check() {
       exit={{ y: "-100vh", transition: { duration: 1 }}}
       className={styles.loaderBox}>
       <h2 className={styles.text}>Vikas Yadav</h2>
-      <p>Loading...</p>
+      <p>Full Stack Engineer</p>
     </motion.div>
   );
 }

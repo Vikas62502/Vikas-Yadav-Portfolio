@@ -15,15 +15,22 @@ export interface ProjectType {
   gitHubLink: string;
   associatedWith?: string;
   TechStack?: string;
+  highlights?: string[];
 }
 
 export const ProjectsData: ProjectType[] = [
   {
     id: 1,
-    title: "Chairbord Agent Panel (Mobile App)",
-    description: "It is a mobile application which is used for FASTag Issuance and Management App is designed to simplify the process of issuing, replacing, and tracking FASTags for Indian vehicles. Built for agents and authorized personnel, the app streamlines the entire workflow from FASTag issuance to managing customer details, ensuring a seamless and efficient experience.",
-    tags: ["ReactNative", "PostgreSQL", "NodeJs", "ExpressJs", "AWS", "MongoDb", "Docker"],
-    TechStack: "ReactNative, PostgreSQL, NodeJs, ExpressJs, AWS, S3, Docker, CI/CD, Postman, ",
+    title: "Chairbord FASTag Platform",
+    description: "A production FASTag issuance and management platform for Indian vehicles — a React Native agent app, a Next.js admin panel and a Node.js microservices backend. Agents can issue, replace and track FASTags, complete KYC and manage wallets, while admins monitor everything in real time.",
+    highlights: [
+      "Event-driven Socket.IO system delivering sub-second updates between dashboards and 2000+ mobile users",
+      "Cashfree webhook handlers for reliable transaction confirmation and wallet reconciliation",
+      "SBI, Bajaj and Airtel bank integrations with KYC and full transaction lifecycle",
+    ],
+    tags: ["ReactNative", "Nextjs", "NodeJs", "ExpressJs", "PostgreSQL", "Socket.IO", "AWS", "Docker"],
+    TechStack: "React Native, Next.js, Node.js, Express, PostgreSQL, Socket.IO, Cashfree, AWS (ECS, ECR, S3, RDS), Docker, Nginx, CI/CD",
+    associatedWith: "Chairbord",
     images: [
       {
         id: 1,
@@ -35,6 +42,32 @@ export const ProjectsData: ProjectType[] = [
   },
   {
     id: 2,
+    title: "RC Download Portal",
+    description: "A web portal for fetching and downloading vehicle RC (registration certificate) details, built as part of the Chairbord platform with reusable UI components shared with the admin panel.",
+    tags: ["Nextjs", "TypeScript", "NodeJs"],
+    TechStack: "Next.js, TypeScript, Node.js, REST APIs, Vercel",
+    associatedWith: "Chairbord",
+    images: [],
+    liveLink: "https://get-rc.vercel.app",
+    gitHubLink: "https://github.com/Vikas62502/Get-rc",
+  },
+  {
+    id: 3,
+    title: "Spyne Backend",
+    description: "A secure, containerized backend service with JWT-based authentication, role-based access control and RESTful APIs, documented with LLD, database schema and API workflows.",
+    highlights: [
+      "JWT auth + RBAC securing 1000+ API interactions per day",
+      "Unit tests with Jest for core modules",
+      "Containerized deployment with documented system design",
+    ],
+    tags: ["NodeJs", "ExpressJs", "MongoDB", "Docker", "Jest"],
+    TechStack: "Node.js, Express, MongoDB, JWT, RBAC, Jest, Docker, Swagger",
+    images: [],
+    liveLink: "",
+    gitHubLink: "https://github.com/Vikas62502/spyne-backend",
+  },
+  {
+    id: 4,
     title: "Green Origin (Crop traceability using Blockchain)",
     description: `From Farm to Fork - Traceability Made Easy
 Discover a new level of transparency and efficiency for agriculture in Mauritius. Our platform leverages blockchain technology to provide real-time traceability from farm to fork, ensuring the authenticity and quality of your produce. Whether you're a farmer, distributor, or retailer, our tool connects all players in the supply chain, enhancing trust and simplifying compliance. Join us in making our local agricultural supply chain more transparent and accessible to everyone.`,
@@ -51,11 +84,11 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 2,
+    id: 5,
     title: "Climate Mitigate",
     description: "Climate Mitigate is a web application that helps users to calculate their carbon footprint and provides them with a platform to offset their carbon emissions by investing in carbon offset projects. The application also provides users with a detailed report of their carbon footprint and the impact of their investments on the environment.",
-    tags: ["React", "NodeJs", "MongoDB", "Redux-Toolkit", "ExpressJs", "Thirdbweb", "Microservice", "AWS", "Docker"],
-    TechStack: "React, NodeJs, MongoDB, Redux-Toolkit, ExpressJs, Thirdbweb, Microservice, AWS, CI/CD, Docker",
+    tags: ["React", "NodeJs", "MongoDB", "Redux-Toolkit", "ExpressJs", "ThirdWeb", "Microservice", "AWS", "Docker"],
+    TechStack: "React, NodeJs, MongoDB, Redux-Toolkit, ExpressJs, Thirdweb, Microservice, AWS, CI/CD, Docker",
     associatedWith: "Cadillacs",
     images: [
       {
@@ -67,10 +100,10 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 3,
+    id: 6,
     title: "Onion Layer",
     description: "Onion Layer is a decentralized application that allows users to buy presale tokens.",
-    tags: ["Nextjs", "Etherjs", "Thirdweb", "Vercel", "Hardhat"],
+    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Vercel", "Hardhat"],
     TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
     associatedWith: "Cadillacs",
     images: [
@@ -83,10 +116,10 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 4,
+    id: 7,
     title: "Matar Token",
     description: "MATAR, where cutting-edge AI meets the robust security of blockchain solutions. Explore the forefront of innovation as we seamlessly integrate artificial intelligence with blockchain technology, revolutionising the way businesses operate and ensuring a secure, transparent, and efficient future. Join us on a journey of limitless possibilities at the intersection of AI and blockchain with MATAR.",
-    tags: ["Nextjs", "Etherjs", "Thirdweb", "Redux-Toolkit", "Vercel", "Hardhat"],
+    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Redux-Toolkit", "Vercel", "Hardhat"],
     TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
     associatedWith: "Cadillacs",
     images: [
@@ -99,10 +132,10 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 5,
+    id: 8,
     title: "Matar NFT",
     description: "Unlock more than just art – with our NFT, you gain a stake in a real-world project, ensuring that your ownership brings tangible profits. Invest in the future and watch your NFT not only captivate visually but also yield returns from a thriving on-ground venture.",
-    tags: ["Nextjs", "Etherjs", "Thirdweb", "Redux-Toolkit", "Vercel", "Hardhat"],
+    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Redux-Toolkit", "Vercel", "Hardhat"],
     TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
     associatedWith: "Cadillacs",
     images: [
@@ -115,10 +148,10 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 6,
+    id: 9,
     title: "Xertf",
     description: "Xertf is a decentralized application that allows users to buy presale tokens.",
-    tags: ["Nextjs", "Etherjs", "Thirdweb", "Redux-Toolkit", "Vercel", "Hardhat"],
+    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Redux-Toolkit", "Vercel", "Hardhat"],
     TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
     associatedWith: "Cadillacs",
     images: [
@@ -131,7 +164,7 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 7,
+    id: 10,
     title: "Xo Visuals",
     description: "XO VISUALS IS A TEAM OF CONTENT CREATORS FOR ARTISTS, FESTIVALS, BRANDS AND MUCH MORE",
     tags: ["Nextjs", "Redux-Toolkit", "Vercel",],
@@ -147,11 +180,11 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   },
   {
-    id: 8,
+    id: 11,
     title: "Poki Token",
     description: "JOIN THE POKI TOKEN PRESALE As the first and largest web gaming site in the world, Poki offers custom game portfolios and simplified presale purchase flow with its hugely exciting Upcoming Tokens portal.",
     TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, , PolygonAmoy",
-    tags: ["Nextjs", "Etherjs", "Thirdweb", "Redux-Toolkit", "Vercel", "Hardhat"],
+    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Redux-Toolkit", "Vercel", "Hardhat"],
     associatedWith: "Cadillacs",
     images: [
       {

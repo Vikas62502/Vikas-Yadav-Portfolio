@@ -1,55 +1,53 @@
-export const experienceData = [
+export interface ExperienceType {
+  id: number;
+  title: string;
+  company: string;
+  link: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+  techStack: string[];
+}
+
+export const experienceData: ExperienceType[] = [
   {
-    "id": 1,
-    "title": "Full Stack Developer",
-    "company": "Chairbord Pvt. Ltd.",
-    "link": "https://chairbord.in/",
-    "location": "Jaipur, Rajesthan, India",
-    "startDate": "April 2024",
-    "endDate": "Current",
-    "description": [
-      " Developed and launched a mobile application for FASTag processing on Google Play Store, achieving 1,000+ downloads and a 4.8 user rating within 3 months.",
-      "Integrated WebSocket for SBI bank tag registration, reducing transaction response time by 60% and enabling real-time status updates.",
-      "Implemented a secure payment system with Cashfree Payment Gateway, achieving a 99.9% transaction success rate and reducing payment failures by 40%.",
-      "Built a robust KYC system with Aadhaar and PAN verification, reducing agent verification time from 2 days to 12 hours and achieving 100% compliance with RBI guidelines.",
-      "Integrated Bajaj and SBI Bank APIs, ensuring reliable FASTag services with retry mechanisms and comprehensive error handling.",
-      "Optimized app performance by implementing lazy loading, reducing initial load time by 40%, and delivering offline functionality.",
-      "Designed a wallet system with transaction history and detailed API logs using Sentry, ensuring reliable tracking and troubleshooting.",
-      "Tech Stack: React Native, TypeScript, Node.js, Express, PostgresSQL, Cashfree API, AWS, Docker, CI/CD with GitHub Actions.",
-    ]
+    id: 1,
+    title: "Full Stack Engineer",
+    company: "Chairbord Pvt. Ltd.",
+    link: "https://chairbord.in/",
+    location: "Jaipur, India (Remote)",
+    startDate: "Apr 2024",
+    endDate: "Present",
+    description: [
+      "Platform Architecture: Engineered a production-grade FASTag platform (0 to 1) using Node.js, PostgreSQL and React Native, scaling to 2000+ active users across a microservices-based architecture.",
+      "Frontend Development: Built and shipped a Next.js admin panel and FASTag management UI with responsive, user-focused components and real-time data updates via Socket.IO.",
+      "System Design: Architected HLD and LLD covering service structure, database schemas, API contracts and CI/CD deployment workflows on AWS ECS.",
+      "Backend Ownership: Built Chairbord's entire backend end to end — RESTful APIs handling 5K+ daily requests with JWT authentication, input validation and optimized PostgreSQL queries achieving sub-250ms response time.",
+      "Multi-Bank Integrations: Integrated SBI, Bajaj and Airtel APIs, handling onboarding flows, KYC verification (Aadhaar & PAN) and end-to-end transaction lifecycles.",
+      "Payment Processing: Integrated Cashfree and SabPaisa payment gateways, processing Rs.5L+ monthly transactions with webhook-based event-driven reconciliation and automated failure handling.",
+      "Cloud Infrastructure: Provisioned and managed AWS infrastructure (ECS, ECR, S3, RDS) with Docker containers and Nginx reverse proxy, maintaining 99.9% uptime.",
+      "Testing & Security: Wrote unit tests using Jest for API endpoints and business logic; conducted VAPT testing and enforced RBAC policies for sensitive financial data.",
+      "Mobile: Launched the FASTag agent app on the Google Play Store, reaching 1,000+ downloads with a 4.8 rating.",
+    ],
+    techStack: ["Next.js", "React Native", "TypeScript", "Node.js", "Express", "PostgreSQL", "Socket.IO", "AWS ECS", "Docker", "Nginx", "Jest"],
   },
   {
-    "id": 2,
-    "title": "Full Stack Web3 Developer",
-    "company": "Cadillacs",
-    "link": "https://cadillacs.in/",
-    "location": "Faridabad, Haryana, India",
-    "startDate": "September 2023",
-    "endDate": "April 2024",
-    "description": [
-      "Built, Tested, and Deployed smart contracts using hardhat, truffle, and ethers.js, ensuring secure and efficient blockchain transactions.",
-      "Implemented account abstraction and tokenization, integrating blockchain with a Node.js backend and React-based frontend, achieving a 25% boost in system performance.",
-      "Developed multi-language user interfaces (English and Arabic) for token purchases, enhancing accessibility for 1,000+ users.",
-      "Designed and developed user and admin interfaces for a carbon offsetting initiative, facilitating 500+ transactions for offset purchases.",
-      "Automated certificate generation and managed carbon project listings to streamline administrative operations.",
-      "Built a blockchain-powered supply chain tracking solution using QR code scanning for real-time updates.",
-      "Successfully handled 2,000 + crop transactions utilizing ERC1155 NFTs and a server-side wallet, effectively eliminating gas fees for end users.",
-      "Tech Stack: Thirdbweb, Solidity, Web3.js, Ether.js, Nextjs, React, Node.js, MongoDB, Express, AWS, CI/CD with GitHub Actions.",
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Web3 Developer Intern",
-    "company": "Cadillacs",
-    "link": "https://cadillacs.in/",
-    "location": "Faridabad, Haryana, India",
-    "startDate": "June 2023",
-    "endDate": "September 2023",
-    "description": [
-      "Developed a visually appealing user interface using React, Bootstrap and Vanilla CSS.",
-      "Used MongoDB, ExpressJS, ReactJS, and NodeJS for seamless integration and functionality.",
-      "Integrated the Cloudinary API for efficient media file management.",
-      "Deployed the application on Render for smooth deployment process"
-    ]
+    id: 2,
+    title: "Full Stack Engineer",
+    company: "Cadillacs",
+    link: "https://cadillacs.in/",
+    location: "Delhi NCR, India",
+    startDate: "May 2023",
+    endDate: "Apr 2024",
+    description: [
+      "Frontend & Web Platform: Built and deployed responsive web applications using Next.js and React.js serving 2000+ users, reducing page load time by 35% through performance optimization and code-splitting.",
+      "Backend API Development: Delivered RESTful backend services with Node.js for a blockchain-based carbon offset platform processing 1000+ transactions, improving supply chain data transparency.",
+      "Infrastructure & CI/CD: Configured AWS EC2 deployments with Docker containers and Nginx reverse proxy; established CI/CD pipelines for automated build and deployment workflows.",
+      "Blockchain Solutions: Optimized smart contracts for carbon offset transactions, reducing processing time by 40% and cutting gas costs by 25%.",
+      "Supply Chain Traceability: Built a QR-code based crop traceability platform handling 2,000+ transactions using ERC1155 NFTs and a server-side wallet, eliminating gas fees for end users.",
+      "Product UI: Designed user and admin interfaces with multi-language (English & Arabic) support and automated certificate generation for carbon offset purchases.",
+    ],
+    techStack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Redux Toolkit", "AWS EC2", "Docker", "Solidity", "Thirdweb"],
   },
 ]

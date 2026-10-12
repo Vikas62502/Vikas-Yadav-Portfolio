@@ -4,6 +4,10 @@ const NavData = [
     href: '#hero'
   },
   {
+    title: 'Impact',
+    href: '#impact'
+  },
+  {
     title: 'About',
     href: '#about'
   },
@@ -12,12 +16,16 @@ const NavData = [
     href: '#experience'
   },
   {
-    title: 'Services',
-    href: '#services'
-  },
-  {
     title: 'Projects',
     href: '#projects'
+  },
+  {
+    title: 'Tech Stack',
+    href: '#stack'
+  },
+  {
+    title: 'What I Do',
+    href: '#services'
   },
   {
     title: 'Contact',

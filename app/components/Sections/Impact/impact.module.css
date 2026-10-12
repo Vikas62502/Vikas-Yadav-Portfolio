@@ -1,0 +1,115 @@
+.section {
+  width: 100%;
+  padding: 4rem 1.25rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .85rem;
+  color: var(--accent);
+}
+
+.sectionHead h3 {
+  margin-top: .5rem;
+  color: #e4e4e7;
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.sectionHead p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #1a1a20 0%, #111114 100%);
+  overflow: hidden;
+  transition: border-color .3s ease, transform .3s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: .8;
+}
+
+.card:hover {
+  border-color: #e11d4880;
+  transform: translateY(-4px);
+}
+
+.metric {
+  display: block;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 2.75rem;
+  line-height: 1;
+  font-weight: 800;
+  background: linear-gradient(90deg, #fafafa, #fb7185);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card h4 {
+  margin-top: .75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.card p {
+  margin-top: .5rem;
+  font-size: .95rem;
+  line-height: 1.55rem;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .sectionHead h3 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .sectionHead p {
+    font-size: 1.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

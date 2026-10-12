@@ -1,18 +1,26 @@
 export const ServiceData = [
   {
-    heading: "Full Stack Development",
-    subHeading: "NextJS, ReactJS, HTML, CSS, JS, NodeJS, Express, MongoDB, PostgreSQL, Redis, Docker",
+    heading: "Full Stack Product Development",
+    subHeading: "Taking products from 0 to 1 — Next.js / React frontends, Node.js backends, PostgreSQL data models and production deployments",
   },
   {
-    heading: "Backend Development",
-    subHeading: "NodeJS, Express, MongoDB, PostgreSQL, Websockets, SDK, MySQL",
+    heading: "Backend & API Engineering",
+    subHeading: "RESTful APIs, microservices, Socket.IO real-time systems, webhooks, JWT auth, RBAC and query optimization",
   },
   {
-    heading: "Frontend Development",
-    subHeading: "NextJS, ReactJS, HTML, CSS, Tailwind, Javascript, Redux Toolkit",
+    heading: "Frontend Engineering",
+    subHeading: "Admin panels, dashboards and web apps with React, Next.js, Redux, TypeScript and React Native for mobile",
   },
   {
-    heading: "DevOps",
-    subHeading: "Docker, GitLab CI/CD, AWS, ECS (Elastic container services), ECR (Amazon Elastic Container Registry), EC2, S3, Route53, CloudFront, Lambda",
-  }
+    heading: "Payments & Integrations",
+    subHeading: "Payment gateways (Cashfree, SabPaisa), banking APIs (SBI, Bajaj, Airtel), KYC flows and event-driven reconciliation",
+  },
+  {
+    heading: "Cloud & DevOps",
+    subHeading: "AWS (ECS, ECR, Lambda, S3, RDS, EC2), Docker, Nginx reverse proxy and CI/CD pipelines",
+  },
+  {
+    heading: "System Design",
+    subHeading: "HLD / LLD, database schemas, API contracts and scalable, maintainable architecture",
+  },
 ]

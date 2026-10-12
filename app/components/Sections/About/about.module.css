@@ -23,17 +23,62 @@
 
 .description{
   margin-top: 2rem;
+  max-width: 1100px;
 }
 
 .description p {
   font-size: 1.5rem;
   line-height: 2.25rem;
   text-align: center;
+  color: #0f0f0f;
 }
 
+.details {
+  margin-top: 2rem;
+  max-width: 900px;
+}
 
+.details p {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: #3a3a3f;
+}
 
+.education {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #0f0f0f1f;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0f0f0f;
+}
 
+.educationLabel {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: crimson;
+}
+
+.educationRow {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.institute {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.educationMeta {
+  color: #55555c;
+}
 
 @media (min-width: 768px) {
   .headingText h3 {
@@ -44,7 +89,22 @@
   }
 
   .description p {
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 2.75rem;
+    line-height: 1.1;
+  }
+
+  .details p {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+  }
+
+  .educationRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .educationMeta {
+    text-align: right;
   }
 }

@@ -1,21 +1,33 @@
 import "./globals.css";
 import Header from "@/app/components/Header";
 import { Metadata } from "next";
-import { League_Spartan } from "next/font/google";
+import { Inter, JetBrains_Mono, League_Spartan } from "next/font/google";
 import CursorPointerAnimated from "./components/CursorPointerAnimated";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const leageSpartan = League_Spartan({
   subsets: ["latin"],
+  variable: "--font-heading",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Vikas Yadav's Portfolio",
-  description: "Full Stack Developer",
+  title: "Vikas Yadav | Full Stack Engineer",
+  description: "Full Stack Engineer with 2+ years of experience, 200+ APIs shipped and 10K+ users served — building production-grade platforms with React, Next.js, TypeScript, Node.js, PostgreSQL, Docker and AWS.",
+  keywords: ["Vikas Yadav", "Full Stack Engineer", "Full Stack Developer", "React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Portfolio"],
   openGraph: {
-    title: "Vikas Yadav's Portfolio",
-    description: "Full Stack Developer | MERN | Blockchain | Web3",
+    title: "Vikas Yadav | Full Stack Engineer",
+    description: "Full Stack Engineer | React | Next.js | React Native | Node.js | PostgreSQL | MongoDB | AWS | Docker",
     url: "http://vikasyadav.online/",
     type: "website",
     images: [
@@ -33,12 +45,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        <meta property="og:title" content="Vikas Yadav's Portfolio" />
+        <meta property="og:title" content="Vikas Yadav | Full Stack Engineer" />
         <meta
           property="og:description"
-          content="Explore Vikas Yadav's Full Stack Developer portfolio and projects."
+          content="Full Stack Engineer building end-to-end products with React, Next.js, Node.js, PostgreSQL and AWS."
         />
-        <meta property="og:url" content="https://www.vikasyadev.tech/" />
+        <meta property="og:url" content="http://vikasyadav.online/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -48,17 +60,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Vikas Yadav's Profile Image" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Vikas Yadav's Portfolio" />
+        <meta name="twitter:title" content="Vikas Yadav | Full Stack Engineer" />
         <meta
           name="twitter:description"
-          content="Explore Vikas Yadav's Full Stack Developer portfolio and projects."
+          content="Full Stack Engineer building end-to-end products with React, Next.js, Node.js, PostgreSQL and AWS."
         />
         <meta
           name="twitter:image"
           content="https://res.cloudinary.com/dglhi9kl4/image/upload/v1736339796/hpqzjoyrjhfqkpenvquf.jpg"
         />
       </head>
-      <body className={`${leageSpartan.className}`}>
+      <body className={`${leageSpartan.variable} ${inter.variable} ${jetBrainsMono.variable}`}>
         <div className="sm:block hidden">
           <CursorPointerAnimated />
         </div>

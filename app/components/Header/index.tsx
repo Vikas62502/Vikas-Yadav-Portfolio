@@ -52,9 +52,19 @@ const index = () => {
       className={styles.header}
       style={scrollyValue > 100 ? navBg : {}}
     >
-      <Link href="#hero">
+      <Link href="#hero" className={styles.logo}>
+        <span className={styles.logoMark}>{"</>"}</span>
         <span>VIKAS YADAV</span>
       </Link>
+      <div className={styles.actions}>
+        <Link
+          href="./Vikas_Yadav_Full_Stack_Resume.pdf"
+          target="_blank"
+          download
+          className={styles.resumeButton}
+        >
+          Resume<span className={styles.resumeArrow}>&nbsp;↓</span>
+        </Link>
       <div className={styles.menuOption}>
         <motion.div
           className={styles.menu}
@@ -67,6 +77,7 @@ const index = () => {
           </AnimatePresence>
         </motion.div>
         <Button isActive={isActive} setIsActive={setIsActive} />
+      </div>
       </div>
     </motion.div>
   );

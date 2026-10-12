@@ -12,21 +12,11 @@ const index = () => {
       <span className={styles.blob}></span>
       <div className={styles.headingText}>
         <h3>Experience</h3>
-        <p>Transforming ideas into functional technology.</p>
+        <p>2+ years shipping production systems across the full stack. Tap a role to see the details.</p>
       </div>
       {
         experienceData.map((data) => (
-          <ExperienceDetails
-            link={data.link}
-            key={data.id}
-            id={data.id}
-            title={data.title}
-            company={data.company}
-            location={data.location}
-            startDate={data.startDate}
-            endDate={data.endDate}
-            description={data.description}
-          />
+          <ExperienceDetails key={data.id} {...data} />
         ))
       }
     </div>

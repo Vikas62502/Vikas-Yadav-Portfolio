@@ -8,9 +8,9 @@ const index = () => {
     <section id="services" className={styles.section}>
       <span className={styles.blob}></span>
       <div className={styles.sectionHead}>
-        <h3>Services</h3>
+        <h3>What I Do</h3>
         <p>
-          I provide a wide range of services to help you achieve your goals.
+          From architecture to deployment — how I can help your team ship.
         </p>
       </div>
       <div className={styles.services}>
