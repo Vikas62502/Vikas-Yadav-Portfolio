@@ -5,7 +5,40 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 
-const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gitHubLink, TechStack, highlights, associatedWith, tags }) => {
+const JobPreview = () => (
+  <div className={styles.jobPreview}>
+    <div className={styles.jobPreviewBar}>
+      <span className={styles.jobPreviewLogo}>JSA</span>
+      <div>
+        <p>Job Search Accelerator</p>
+        <small>12 matches · 3 in progress</small>
+      </div>
+    </div>
+    <div className={styles.jobCard}>
+      <div>
+        <strong>Senior Full Stack Engineer</strong>
+        <span>Remote · Next.js · Node.js</span>
+      </div>
+      <em>94% match</em>
+    </div>
+    <div className={styles.jobCard}>
+      <div>
+        <strong>Backend Engineer</strong>
+        <span>Bengaluru · PostgreSQL · AWS</span>
+      </div>
+      <em>88% match</em>
+    </div>
+    <div className={styles.jobCard}>
+      <div>
+        <strong>Full Stack Developer</strong>
+        <span>New Delhi · React · TypeScript</span>
+      </div>
+      <em>81% match</em>
+    </div>
+  </div>
+);
+
+const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gitHubLink, TechStack, highlights, associatedWith, tags, preview }) => {
   return (
     <div key={id} className={`${styles.projectBox} hover:shadow-xl hover:scale-[1.02] transition-transform duration-300`}>
       <div className={styles.aboutProject}>
@@ -40,6 +73,8 @@ const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gi
           <div className={styles.imageBox}>
             <Image src={images[0].url} alt={title} width={100} height={100} quality={100} unoptimized={true} />
           </div>
+        ) : preview === "jobs" ? (
+          <JobPreview />
         ) : (
           <div className={styles.codeWindow}>
             <div className={styles.codeWindowBar}>

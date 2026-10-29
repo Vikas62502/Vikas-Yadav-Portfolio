@@ -23,7 +23,7 @@ export const experienceData: ExperienceType[] = [
       "Platform Architecture: Engineered a production-grade FASTag platform (0 to 1) using Node.js, PostgreSQL and React Native, scaling to 2000+ active users across a microservices-based architecture.",
       "Frontend Development: Built and shipped a Next.js admin panel and FASTag management UI with responsive, user-focused components and real-time data updates via Socket.IO.",
       "System Design: Architected HLD and LLD covering service structure, database schemas, API contracts and CI/CD deployment workflows on AWS ECS.",
-      "Backend Ownership: Built Chairbord's entire backend end to end — RESTful APIs handling 5K+ daily requests with JWT authentication, input validation and optimized PostgreSQL queries achieving sub-250ms response time.",
+      "Full Product Ownership: Own the FASTag stack end to end — React Native agent app, Next.js admin panel, Get RC portal and the Node.js backend — with RESTful APIs handling 5K+ daily requests, JWT auth and sub-250ms PostgreSQL queries.",
       "Multi-Bank Integrations: Integrated SBI, Bajaj and Airtel APIs, handling onboarding flows, KYC verification (Aadhaar & PAN) and end-to-end transaction lifecycles.",
       "Payment Processing: Integrated Cashfree and SabPaisa payment gateways, processing Rs.5L+ monthly transactions with webhook-based event-driven reconciliation and automated failure handling.",
       "Cloud Infrastructure: Provisioned and managed AWS infrastructure (ECS, ECR, S3, RDS) with Docker containers and Nginx reverse proxy, maintaining 99.9% uptime.",

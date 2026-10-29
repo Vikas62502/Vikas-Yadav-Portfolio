@@ -248,6 +248,87 @@
   color: #a5d6ff;
 }
 
+.jobPreview {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #16161d 0%, #0d0d12 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  overflow: hidden;
+}
+
+.jobPreviewBar {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding-bottom: .65rem;
+  border-bottom: 1px solid #ffffff14;
+}
+
+.jobPreviewLogo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: .75rem;
+  letter-spacing: .04em;
+}
+
+.jobPreviewBar p {
+  color: #fafafa;
+  font-weight: 700;
+  font-size: .95rem;
+  line-height: 1.2;
+}
+
+.jobPreviewBar small {
+  color: #a1a1aa;
+  font-size: .75rem;
+}
+
+.jobCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  padding: .7rem .85rem;
+  border-radius: 10px;
+  background: #ffffff0a;
+  border: 1px solid #ffffff12;
+}
+
+.jobCard strong {
+  display: block;
+  color: #fafafa;
+  font-size: .85rem;
+}
+
+.jobCard span {
+  display: block;
+  color: #a1a1aa;
+  font-size: .75rem;
+  margin-top: .15rem;
+}
+
+.jobCard em {
+  flex-shrink: 0;
+  font-style: normal;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: .75rem;
+  color: #4ade80;
+  background: #4ade8018;
+  padding: .2rem .5rem;
+  border-radius: 50px;
+}
+
 .projectButtons {
   width: 100%;
   display: flex;

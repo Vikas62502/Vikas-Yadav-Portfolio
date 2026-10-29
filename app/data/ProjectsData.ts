@@ -16,6 +16,7 @@ export interface ProjectType {
   associatedWith?: string;
   TechStack?: string;
   highlights?: string[];
+  preview?: "jobs";
 }
 
 export const ProjectsData: ProjectType[] = [
@@ -39,6 +40,21 @@ export const ProjectsData: ProjectType[] = [
     ],
     liveLink: "https://play.google.com/store/apps/details?id=com.chairbord&hl=en",
     gitHubLink: "https://github.com/Vikas62502/Chairbord",
+  },
+  {
+    id: 12,
+    title: "Job Search Accelerator",
+    description: "A live job-search workspace that helps you find matching roles, track applications and move from search to interviews faster — built as a full-stack product and shipped on Vercel.",
+    highlights: [
+      "End-to-end product: search, match and track applications in one place",
+      "Shipped as a production web app at job-search-accelerator-eight.vercel.app",
+    ],
+    tags: ["Nextjs", "TypeScript", "Vercel"],
+    TechStack: "Next.js, TypeScript, React, Vercel",
+    images: [],
+    preview: "jobs",
+    liveLink: "https://job-search-accelerator-eight.vercel.app/",
+    gitHubLink: "",
   },
   {
     id: 2,

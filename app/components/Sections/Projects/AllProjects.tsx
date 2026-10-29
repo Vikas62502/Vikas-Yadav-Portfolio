@@ -86,6 +86,7 @@ const AllProjects = () => {
                   TechStack={project.TechStack}
                   highlights={project.highlights}
                   associatedWith={project.associatedWith}
+                  preview={project.preview}
                 />
               ))
             }

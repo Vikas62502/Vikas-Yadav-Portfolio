@@ -45,7 +45,7 @@ const index = () => {
               scalable Node.js APIs, PostgreSQL data models and AWS infrastructure.
             </p>
             <p className={styles.currently}>
-              Currently <strong>Full Stack Engineer @ Chairbord</strong> · built the entire backend of its FASTag platform
+              Currently <strong>Full Stack Engineer @ Chairbord</strong> · full ownership of the product — agent app, admin panel, Get RC portal and backend
             </p>
             <div className={styles.layers}>
               {stackLayers.map((layer, i) => (
