@@ -183,18 +183,21 @@
   z-index: 1;
 }
 
-.content h2 {
-  font-size: 2rem;
-  line-height: 2.4rem;
-  font-weight: 700;
+.content .greeting {
+  font-size: 1.15rem;
+  line-height: 1.5rem;
+  font-weight: 600;
   color: rgb(191 191 198);
-  overflow: hidden;
+  opacity: 1;
+  padding-top: 0;
 }
 
 .content h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: inherit;
+  font-size: 1.85rem;
+  line-height: 2.2rem;
+  font-weight: 800;
+  color: #fafafa;
+  max-width: 16ch;
 }
 
 .content p {
@@ -258,14 +261,15 @@
 }
 
 @media (min-width: 768px) {
-  .content h2 {
-    font-size: 4.5rem;
-    line-height: 1;
+  .content .greeting {
+    font-size: 1.35rem;
+    line-height: 1.75rem;
   }
 
   .content h1 {
-    font-size: 4.5rem;
-    line-height: 1;
+    font-size: 4rem;
+    line-height: 1.05;
+    max-width: none;
   }
 
   .content p {

@@ -33,9 +33,20 @@
   font-weight: 500;
   font-size: .875rem;
   line-height: 1.25rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1rem;
   padding-left: .5rem;
   padding-right: .5rem;
+}
+
+.allProjectsLink {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #fb7185;
+  font-weight: 700;
+}
+
+.allProjectsLink:hover {
+  text-decoration: underline;
 }
 
 .tagButtons {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./projects.module.css";
 import AllProjects from "./AllProjects";
 
@@ -8,9 +9,11 @@ const index = () => {
       <div className={styles.sectionHead}>
         <h3>Projects</h3>
         <p>
-          Here are some of the projects I have worked on. Click on the project
-          to view more details.
+          Production full stack work — open a case study for stack, results and live links.
         </p>
+        <Link href="/projects" className={styles.allProjectsLink}>
+          Browse all project pages →
+        </Link>
       </div>
       <AllProjects />
     </section>

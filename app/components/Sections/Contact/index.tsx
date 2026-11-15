@@ -7,10 +7,10 @@ const index = () => {
     <section id='contact' className={styles.section}>
       <span className={styles.blob}></span>
       <div className={styles.sectionHead}>
-        <span className={styles.eyebrow}>Send a message</span>
+        <span className={styles.eyebrow}>Hiring? Contact me</span>
         <h3>{`Let's talk`}</h3>
         <p>
-          {`Hiring for a full stack role or building something ambitious? Write below and it lands straight in my inbox.`}
+          {`Looking to hire a Full Stack Engineer or Backend Developer? Write below — it goes straight to my inbox.`}
         </p>
       </div>
       <div className={styles.contactBox}>

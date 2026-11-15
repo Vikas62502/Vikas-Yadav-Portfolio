@@ -25,12 +25,12 @@ const siteUrl = "https://vikasyadav.online";
 const ogImage =
   "https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg";
 const description =
-  "Full Stack Engineer with 2+ years of experience, 200+ APIs shipped and 10K+ users served — building production-grade platforms with React, Next.js, TypeScript, Node.js, PostgreSQL, Docker and AWS.";
+  "Vikas Yadav — Full Stack Engineer / Full Stack Developer in New Delhi, India. Open to full-time roles. 2+ years experience, 200+ APIs, 10K+ users served. React, Next.js, TypeScript, Node.js, PostgreSQL, Docker and AWS.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vikas Yadav | Full Stack Engineer",
+    default: "Vikas Yadav | Full Stack Engineer | React · Next.js · Node.js",
     template: "%s | Vikas Yadav",
   },
   description,
@@ -38,14 +38,17 @@ export const metadata: Metadata = {
     "Vikas Yadav",
     "Full Stack Engineer",
     "Full Stack Developer",
-    "React",
-    "Next.js",
-    "Node.js",
+    "Full Stack Developer India",
+    "React Developer",
+    "Next.js Developer",
+    "Node.js Developer",
     "TypeScript",
     "PostgreSQL",
     "AWS",
+    "Hire Full Stack Engineer",
     "Portfolio",
     "New Delhi",
+    "Remote",
   ],
   authors: [{ name: "Vikas Yadav", url: siteUrl }],
   creator: "Vikas Yadav",
@@ -110,10 +113,20 @@ const jsonLd = {
       jobTitle: "Full Stack Engineer",
       description,
       email: "mailto:vikasyadav62502@gmail.com",
+      telephone: "+91-81786-24530",
       address: {
         "@type": "PostalAddress",
         addressLocality: "New Delhi",
         addressCountry: "IN",
+      },
+      worksFor: {
+        "@type": "Organization",
+        name: "Chairbord Pvt. Ltd.",
+        url: "https://chairbord.in/",
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Maharaja Agrasen Institute of Technology",
       },
       sameAs: [
         "https://github.com/Vikas62502",
@@ -124,12 +137,16 @@ const jsonLd = {
         "Full Stack Development",
         "React",
         "Next.js",
+        "React Native",
         "Node.js",
         "TypeScript",
         "PostgreSQL",
         "AWS",
         "Docker",
+        "System Design",
+        "Payment Gateways",
       ],
+      seeks: "Full-time Full Stack Engineer or Backend Engineer role",
     },
   ],
 };

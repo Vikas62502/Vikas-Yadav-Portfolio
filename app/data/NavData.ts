@@ -17,7 +17,7 @@ const NavData = [
   },
   {
     title: 'Projects',
-    href: '#projects'
+    href: '/projects'
   },
   {
     title: 'Tech Stack',

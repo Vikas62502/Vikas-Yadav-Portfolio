@@ -1,6 +1,6 @@
 
 import styles from "./projects.module.css";
-import { ProjectType } from "@/app/data/ProjectsData";
+import { ProjectType, getProjectSlug } from "@/app/data/ProjectsData";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
@@ -38,13 +38,30 @@ const JobPreview = () => (
   </div>
 );
 
-const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gitHubLink, TechStack, highlights, associatedWith, tags, preview }) => {
+const Project: FC<ProjectType> = (project) => {
+  const {
+    id,
+    title,
+    description,
+    images,
+    liveLink,
+    gitHubLink,
+    TechStack,
+    highlights,
+    associatedWith,
+    tags,
+    preview,
+  } = project;
+  const slug = getProjectSlug(project);
+
   return (
     <div key={id} className={`${styles.projectBox} hover:shadow-xl hover:scale-[1.02] transition-transform duration-300`}>
       <div className={styles.aboutProject}>
         <div className={styles.projectHeader}>
           {associatedWith && <span className={styles.badge}>@ {associatedWith}</span>}
-          <h2 className={styles.title}>{title}</h2>
+          <h2 className={styles.title}>
+            <Link href={`/projects/${slug}`}>{title}</Link>
+          </h2>
           <p className={styles.description}>{description}</p>
           {highlights && highlights.length > 0 && (
             <ul className={styles.highlights}>
@@ -56,9 +73,12 @@ const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gi
           <p className={styles.techStack}><span>Tech Stack:</span> {TechStack}</p>
         </div>
         <div className={styles.projectButtons}>
+          <Link href={`/projects/${slug}`} className={`${styles.buttonLink} ${styles.primaryLink}`}>
+            <span>Case Study</span>
+          </Link>
           {liveLink && (
-            <Link href={liveLink} className={`${styles.buttonLink} ${styles.primaryLink}`} target="_blank">
-              <span>Live Link ↗</span>
+            <Link href={liveLink} className={styles.buttonLink} target="_blank">
+              <span>Live ↗</span>
             </Link>
           )}
           {gitHubLink && (
@@ -71,7 +91,14 @@ const Project: FC<ProjectType> = ({ id, title, description, images, liveLink, gi
       <div className={styles.imageContainer}>
         {images.length > 0 ? (
           <div className={styles.imageBox}>
-            <Image src={images[0].url} alt={title} width={100} height={100} quality={100} unoptimized={true} />
+            <Image
+              src={images[0].url}
+              alt={`${title} — full stack project by Vikas Yadav`}
+              width={100}
+              height={100}
+              quality={100}
+              unoptimized={true}
+            />
           </div>
         ) : preview === "jobs" ? (
           <JobPreview />

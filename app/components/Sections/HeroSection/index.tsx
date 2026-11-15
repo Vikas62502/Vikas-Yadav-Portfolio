@@ -31,18 +31,18 @@ const index = () => {
             <span className={styles.availability}>
               <span className={styles.dot}></span>
               <span>
-                Open to opportunities<span className="hidden sm:inline"> · New Delhi, India · Open to relocation</span>
+                Open to full-time roles<span className="hidden sm:inline"> · New Delhi, India · Open to relocation</span>
               </span>
             </span>
-            <h2>{`Hello! I'm Vikas Yadav`}</h2>
-            <h1>Full Stack Engineer</h1>
+            <p className={styles.greeting}>{`Hello! I'm Vikas Yadav`}</p>
+            <h1>Vikas Yadav — Full Stack Engineer</h1>
             <div className={styles.rotatingLine}>
               <span>I build</span>
               <RotatingText words={buildWords} className={styles.rotatingWord} />
             </div>
             <p>
-              End-to-end products — pixel-perfect React &amp; Next.js interfaces,
-              scalable Node.js APIs, PostgreSQL data models and AWS infrastructure.
+              Full Stack Developer in India building production React, Next.js and Node.js products —
+              from pixel-perfect UIs to PostgreSQL APIs and AWS infrastructure.
             </p>
             <p className={styles.currently}>
               Currently <strong>Full Stack Engineer @ Chairbord</strong> · full ownership of the product — agent app, admin panel, Get RC portal and backend
@@ -65,6 +65,11 @@ const index = () => {
               <Link href="#contact">
                 <div className={styles.button}>
                   <span>{`Hire Me`}</span>
+                </div>
+              </Link>
+              <Link href="/projects">
+                <div className={styles.button}>
+                  <span>{`Projects`}</span>
                 </div>
               </Link>
               <Link href={`./Vikas_Yadav_Full_Stack_Resume.pdf`} target="_blank" download>

@@ -17,12 +17,16 @@ export interface ProjectType {
   TechStack?: string;
   highlights?: string[];
   preview?: "jobs";
+  slug?: string;
+  seoSummary?: string;
 }
 
 export const ProjectsData: ProjectType[] = [
   {
     id: 1,
     title: "Chairbord FASTag Platform",
+    slug: "chairbord-fastag-platform",
+    seoSummary: "Full stack FASTag platform by Vikas Yadav — React Native agent app, Next.js admin panel, Node.js APIs, PostgreSQL and AWS ECS.",
     description: "A production FASTag issuance and management platform for Indian vehicles — a React Native agent app, a Next.js admin panel and a Node.js microservices backend. Agents can issue, replace and track FASTags, complete KYC and manage wallets, while admins monitor everything in real time.",
     highlights: [
       "Event-driven Socket.IO system delivering sub-second updates between dashboards and 2000+ mobile users",
@@ -44,6 +48,8 @@ export const ProjectsData: ProjectType[] = [
   {
     id: 12,
     title: "Job Search Accelerator",
+    slug: "job-search-accelerator",
+    seoSummary: "Job Search Accelerator by Vikas Yadav — a Next.js full stack job-search workspace for matching roles and tracking applications.",
     description: "A live job-search workspace that helps you find matching roles, track applications and move from search to interviews faster — built as a full-stack product and shipped on Vercel.",
     highlights: [
       "End-to-end product: search, match and track applications in one place",
@@ -59,6 +65,8 @@ export const ProjectsData: ProjectType[] = [
   {
     id: 2,
     title: "RC Download Portal",
+    slug: "rc-download-portal",
+    seoSummary: "Vehicle RC download portal by Vikas Yadav — Next.js, TypeScript and Node.js APIs for registration certificate lookup.",
     description: "A web portal for fetching and downloading vehicle RC (registration certificate) details, built as part of the Chairbord platform with reusable UI components shared with the admin panel.",
     tags: ["Nextjs", "TypeScript", "NodeJs"],
     TechStack: "Next.js, TypeScript, Node.js, REST APIs, Vercel",
@@ -70,6 +78,8 @@ export const ProjectsData: ProjectType[] = [
   {
     id: 3,
     title: "Spyne Backend",
+    slug: "spyne-backend",
+    seoSummary: "Secure Node.js backend by Vikas Yadav with JWT auth, RBAC, Jest tests and Docker deployment.",
     description: "A secure, containerized backend service with JWT-based authentication, role-based access control and RESTful APIs, documented with LLD, database schema and API workflows.",
     highlights: [
       "JWT auth + RBAC securing 1000+ API interactions per day",
@@ -212,3 +222,18 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
     gitHubLink: "",
   }
 ];
+
+export const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+export const getProjectSlug = (project: ProjectType) =>
+  project.slug ?? slugify(project.title);
+
+export const getProjectBySlug = (slug: string) =>
+  ProjectsData.find((project) => getProjectSlug(project) === slug);
+
+export const getAllProjectSlugs = () =>
+  ProjectsData.map((project) => getProjectSlug(project));
