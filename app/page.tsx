@@ -28,14 +28,14 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-
   return (
     <>
       <AnimatePresence>
         {loading && <Loader />}
       </AnimatePresence>
 
-      {!loading && (<div className={styles.page}>
+      {/* Always render page content so crawlers can index it */}
+      <div className={styles.page} aria-busy={loading}>
         <HeroSection />
         <Impact />
         <Reveal><About /></Reveal>
@@ -47,7 +47,7 @@ export default function Home() {
         <Reveal><GithubContributionGraph /></Reveal>
         <Reveal><Contact /></Reveal>
         <Footer />
-      </div>)}
+      </div>
     </>
   );
 }

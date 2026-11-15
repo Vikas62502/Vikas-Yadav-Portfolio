@@ -21,56 +21,127 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const siteUrl = "https://vikasyadav.online";
+const ogImage =
+  "https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg";
+const description =
+  "Full Stack Engineer with 2+ years of experience, 200+ APIs shipped and 10K+ users served — building production-grade platforms with React, Next.js, TypeScript, Node.js, PostgreSQL, Docker and AWS.";
+
 export const metadata: Metadata = {
-  title: "Vikas Yadav | Full Stack Engineer",
-  description: "Full Stack Engineer with 2+ years of experience, 200+ APIs shipped and 10K+ users served — building production-grade platforms with React, Next.js, TypeScript, Node.js, PostgreSQL, Docker and AWS.",
-  keywords: ["Vikas Yadav", "Full Stack Engineer", "Full Stack Developer", "React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Portfolio"],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Vikas Yadav | Full Stack Engineer",
+    template: "%s | Vikas Yadav",
+  },
+  description,
+  keywords: [
+    "Vikas Yadav",
+    "Full Stack Engineer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "PostgreSQL",
+    "AWS",
+    "Portfolio",
+    "New Delhi",
+  ],
+  authors: [{ name: "Vikas Yadav", url: siteUrl }],
+  creator: "Vikas Yadav",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Vikas Yadav | Full Stack Engineer",
-    description: "Full Stack Engineer | React | Next.js | React Native | Node.js | PostgreSQL | MongoDB | AWS | Docker",
-    url: "http://vikasyadav.online/",
+    description:
+      "Full Stack Engineer | React · Next.js · React Native · Node.js · PostgreSQL · AWS · Docker",
+    url: siteUrl,
+    siteName: "Vikas Yadav Portfolio",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Vikas Yadav's Profile Image",
+        alt: "Vikas Yadav — Full Stack Engineer",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vikas Yadav | Full Stack Engineer",
+    description:
+      "Full Stack Engineer building end-to-end products with React, Next.js, Node.js, PostgreSQL and AWS.",
+    images: [ogImage],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Vikas Yadav Portfolio",
+      description,
+      inLanguage: "en",
+      publisher: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Vikas Yadav",
+      url: siteUrl,
+      image: ogImage,
+      jobTitle: "Full Stack Engineer",
+      description,
+      email: "mailto:vikasyadav62502@gmail.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "New Delhi",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://github.com/Vikas62502",
+        "https://www.linkedin.com/in/vikasyadav62/",
+        "https://x.com/vikasyadav_eth",
+      ],
+      knowsAbout: [
+        "Full Stack Development",
+        "React",
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "AWS",
+        "Docker",
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:title" content="Vikas Yadav | Full Stack Engineer" />
-        <meta
-          property="og:description"
-          content="Full Stack Engineer building end-to-end products with React, Next.js, Node.js, PostgreSQL and AWS."
-        />
-        <meta property="og:url" content="http://vikasyadav.online/" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dglhi9kl4/image/upload/v1736340616/uionmie1wx77ywm9ssg4.jpg"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Vikas Yadav's Profile Image" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Vikas Yadav | Full Stack Engineer" />
-        <meta
-          name="twitter:description"
-          content="Full Stack Engineer building end-to-end products with React, Next.js, Node.js, PostgreSQL and AWS."
-        />
-        <meta
-          name="twitter:image"
-          content="https://res.cloudinary.com/dglhi9kl4/image/upload/v1736339796/hpqzjoyrjhfqkpenvquf.jpg"
-        />
-      </head>
       <body className={`${leageSpartan.variable} ${inter.variable} ${jetBrainsMono.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="sm:block hidden">
           <CursorPointerAnimated />
         </div>
