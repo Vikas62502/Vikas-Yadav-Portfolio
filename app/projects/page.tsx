@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects | Vikas Yadav",
     description:
-      "Production full stack work: Chairbord FASTag, Get RC portal, Job Search Accelerator, and more.",
+      "Production full stack work: Chairbord FASTag, admin panel, Winston/Loki/Prometheus/Grafana live logs, SnapWheel & EGS apps, and more.",
     url: "https://vikasyadav.online/projects",
   },
 };

@@ -14,7 +14,7 @@ export const Impact = [
   {
     metric: "0 → 1",
     title: "Own Chairbord's FASTag product",
-    detail: "Full ownership across the stack — React Native agent app, Next.js admin panel, Get RC portal and the Node.js microservices backend — from first commit to production.",
+    detail: "Full ownership across the stack — React Native agent app, Next.js admin panel, white-label partner apps (SnapWheel, EGS), Get RC portal and the Node.js microservices backend — from first commit to production.",
   },
   {
     metric: "Rs.5L+",
@@ -39,7 +39,7 @@ export const Impact = [
   {
     metric: "99.9%",
     title: "Uptime on AWS",
-    detail: "Dockerized services on ECS with Nginx, CI/CD pipelines, Jest tests and VAPT-hardened RBAC.",
+    detail: "Dockerized services on ECS with Nginx, CI/CD, Winston → Loki/Prometheus/Grafana live logs, Jest tests and VAPT-hardened RBAC.",
   },
 ]
 

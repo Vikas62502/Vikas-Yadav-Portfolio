@@ -27,14 +27,16 @@ export const ProjectsData: ProjectType[] = [
     title: "Chairbord FASTag Platform",
     slug: "chairbord-fastag-platform",
     seoSummary: "Full stack FASTag platform by Vikas Yadav — React Native agent app, Next.js admin panel, Node.js APIs, PostgreSQL and AWS ECS.",
-    description: "A production FASTag issuance and management platform for Indian vehicles — a React Native agent app, a Next.js admin panel and a Node.js microservices backend. Agents can issue, replace and track FASTags, complete KYC and manage wallets, while admins monitor everything in real time.",
+    description: "A production FASTag issuance and management platform for Indian vehicles — a React Native agent app, a Next.js admin panel and a Node.js microservices backend. Agents can issue, replace and track FASTags, complete KYC and manage wallets, while admins monitor everything in real time. The same agent codebase ships as white-label Play Store apps for partners (SnapWheel, EGS).",
     highlights: [
       "Event-driven Socket.IO system delivering sub-second updates between dashboards and 2000+ mobile users",
       "Cashfree webhook handlers for reliable transaction confirmation and wallet reconciliation",
       "SBI, Bajaj and Airtel bank integrations with KYC and full transaction lifecycle",
+      "White-label agent apps: SnapWheel and EGS FASTag on Google Play",
+      "Live observability with Winston → Loki + Prometheus → Grafana for production backend logs and metrics",
     ],
     tags: ["ReactNative", "Nextjs", "NodeJs", "ExpressJs", "PostgreSQL", "Socket.IO", "AWS", "Docker"],
-    TechStack: "React Native, Next.js, Node.js, Express, PostgreSQL, Socket.IO, Cashfree, AWS (ECS, ECR, S3, RDS), Docker, Nginx, CI/CD",
+    TechStack: "React Native, Next.js, Node.js, Express, PostgreSQL, Socket.IO, Cashfree, Winston, Loki, Prometheus, Grafana, AWS (ECS, ECR, S3, RDS), Docker, Nginx, CI/CD",
     associatedWith: "Chairbord",
     images: [
       {
@@ -44,6 +46,96 @@ export const ProjectsData: ProjectType[] = [
     ],
     liveLink: "https://play.google.com/store/apps/details?id=com.chairbord&hl=en",
     gitHubLink: "https://github.com/Vikas62502/Chairbord",
+  },
+  {
+    id: 13,
+    title: "Chairbord Admin Panel",
+    slug: "chairbord-admin-panel",
+    seoSummary: "Chairbord admin panel by Vikas Yadav — Next.js dashboard for FASTag activations, agents, inventory, banks and transaction search.",
+    description: "Production operations dashboard for the FASTag platform: activation KPIs, agent health, warehouse tag inventory, SBI/Bajaj share charts, and a unified search for vehicle numbers, tag IDs, UTRs and pasted bank messages. Built so ops can troubleshoot issuances and payments without digging through logs.",
+    highlights: [
+      "Live business overview: successful activations, active agents, pending requests and warehouse stock",
+      "Daily activation charts and bank-wise share for SBI and Bajaj",
+      "Search across RC numbers, tag IDs, UTRs and screenshot-assisted lookup",
+    ],
+    tags: ["Nextjs", "TypeScript", "NodeJs", "PostgreSQL", "Socket.IO", "AWS"],
+    TechStack: "Next.js, TypeScript, Node.js, PostgreSQL, Socket.IO, charting, AWS",
+    associatedWith: "Chairbord",
+    images: [
+      {
+        id: 1,
+        url: images.chairbordAdmin.src,
+      },
+    ],
+    liveLink: "https://adminv2.chairbord.in/",
+    gitHubLink: "",
+  },
+  {
+    id: 16,
+    title: "Chairbord Live Logs & Observability",
+    slug: "chairbord-live-logs-observability",
+    seoSummary: "Production observability by Vikas Yadav — Winston logging with Grafana Loki, Prometheus metrics and Grafana dashboards for Chairbord's live Node.js backend.",
+    description: "Built the live logging and monitoring stack for Chairbord's production backend (cbpl-backend-live). Structured logs from Winston ship to Grafana Loki; Prometheus scrapes service metrics; Grafana Explore drills into API traffic, Socket.IO events, bank crons and FASTag registration flows in near real time.",
+    highlights: [
+      "Winston structured logging piped into Grafana Loki for service-scoped log drilldown",
+      "Prometheus metrics + Grafana dashboards for live backend health",
+      "Trace bank crons, Socket disconnects, SBI/Bajaj APIs and agent dashboard traffic from one Explore view",
+    ],
+    tags: ["Winston", "Loki", "Prometheus", "Grafana", "NodeJs", "Observability"],
+    TechStack: "Winston, Grafana Loki, Prometheus, Grafana, Node.js, Docker",
+    associatedWith: "Chairbord",
+    images: [
+      {
+        id: 1,
+        url: images.chairbordLogsGrafana.src,
+      },
+    ],
+    liveLink: "https://hostlogscap.chairbord.in/",
+    gitHubLink: "",
+  },
+  {
+    id: 14,
+    title: "SnapWheel FASTag",
+    slug: "snapwheel-fastag",
+    seoSummary: "SnapWheel FASTag app by Vikas Yadav — white-label React Native agent app of the Chairbord FASTag platform on Google Play.",
+    description: "A white-label build of the Chairbord agent panel for SnapWheel. Same FASTag issuance, KYC, wallet and recharge flows, branded and published as a partner app on the Google Play Store.",
+    highlights: [
+      "White-label of the Chairbord React Native agent app",
+      "Live on Google Play as SnapWheel : FASTag App",
+    ],
+    tags: ["ReactNative", "NodeJs", "FASTag", "PlayStore"],
+    TechStack: "React Native, Node.js APIs, white-label branding, Google Play",
+    associatedWith: "Chairbord",
+    images: [
+      {
+        id: 1,
+        url: images.snapwheelFastag.src,
+      },
+    ],
+    liveLink: "https://play.google.com/store/apps/details?id=com.snapwheel&hl=en_IN",
+    gitHubLink: "",
+  },
+  {
+    id: 15,
+    title: "EGS FASTag",
+    slug: "egs-fastag",
+    seoSummary: "EGS FASTag app by Vikas Yadav — white-label React Native agent app of the Chairbord FASTag platform on Google Play.",
+    description: "A white-label build of the Chairbord agent panel for EGS. Partner-branded FASTag agent experience — issue tags, manage vehicles and run day-to-day agent workflows — published on Google Play.",
+    highlights: [
+      "White-label of the Chairbord React Native agent app",
+      "Live on Google Play as EGS FASTag",
+    ],
+    tags: ["ReactNative", "NodeJs", "FASTag", "PlayStore"],
+    TechStack: "React Native, Node.js APIs, white-label branding, Google Play",
+    associatedWith: "Chairbord",
+    images: [
+      {
+        id: 1,
+        url: images.egsFastag.src,
+      },
+    ],
+    liveLink: "https://play.google.com/store/apps/details?id=com.egs&hl=en_IN",
+    gitHubLink: "",
   },
   {
     id: 12,
@@ -93,55 +185,6 @@ export const ProjectsData: ProjectType[] = [
     gitHubLink: "https://github.com/Vikas62502/spyne-backend",
   },
   {
-    id: 4,
-    title: "Green Origin (Crop traceability using Blockchain)",
-    description: `From Farm to Fork - Traceability Made Easy
-Discover a new level of transparency and efficiency for agriculture in Mauritius. Our platform leverages blockchain technology to provide real-time traceability from farm to fork, ensuring the authenticity and quality of your produce. Whether you're a farmer, distributor, or retailer, our tool connects all players in the supply chain, enhancing trust and simplifying compliance. Join us in making our local agricultural supply chain more transparent and accessible to everyone.`,
-    tags: ["Nextjs", "NodeJs", "MongoDB", "Redux-Toolkit", "ExpressJs", "ThirdWeb", "AWS"],
-    TechStack: "Nextjs, NodeJs, MongoDB, Redux-Toolkit, ExpressJs, ThirdWeb, Solidity, Web3.js, Ether.js, AWS, CI/CD, QrCode, Swagger",
-    associatedWith: "Cadillacs",
-    images: [
-      {
-        id: 1,
-        url: images.greenOrigin.src,
-      },
-    ],
-    liveLink: "https://www.greenorigin.org/",
-    gitHubLink: "",
-  },
-  {
-    id: 5,
-    title: "Climate Mitigate",
-    description: "Climate Mitigate is a web application that helps users to calculate their carbon footprint and provides them with a platform to offset their carbon emissions by investing in carbon offset projects. The application also provides users with a detailed report of their carbon footprint and the impact of their investments on the environment.",
-    tags: ["React", "NodeJs", "MongoDB", "Redux-Toolkit", "ExpressJs", "ThirdWeb", "Microservice", "AWS", "Docker"],
-    TechStack: "React, NodeJs, MongoDB, Redux-Toolkit, ExpressJs, Thirdweb, Microservice, AWS, CI/CD, Docker",
-    associatedWith: "Cadillacs",
-    images: [
-      {
-        id: 1,
-        url: images.climateMitigate.src,
-      },
-    ],
-    liveLink: "https://cm-v2.onrender.com/carbon-credit-marketplace",
-    gitHubLink: "",
-  },
-  {
-    id: 6,
-    title: "Onion Layer",
-    description: "Onion Layer is a decentralized application that allows users to buy presale tokens.",
-    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Vercel", "Hardhat"],
-    TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
-    associatedWith: "Cadillacs",
-    images: [
-      {
-        id: 1,
-        url: images.onionLayer.src,
-      },
-    ],
-    liveLink: "https://onion-layer.vercel.app/",
-    gitHubLink: "",
-  },
-  {
     id: 7,
     title: "Matar Token",
     description: "MATAR, where cutting-edge AI meets the robust security of blockchain solutions. Explore the forefront of innovation as we seamlessly integrate artificial intelligence with blockchain technology, revolutionising the way businesses operate and ensuring a secure, transparent, and efficient future. Join us on a journey of limitless possibilities at the intersection of AI and blockchain with MATAR.",
@@ -171,22 +214,6 @@ Discover a new level of transparency and efficiency for agriculture in Mauritius
       },
     ],
     liveLink: "https://nft.matar.ai/",
-    gitHubLink: "",
-  },
-  {
-    id: 9,
-    title: "Xertf",
-    description: "Xertf is a decentralized application that allows users to buy presale tokens.",
-    tags: ["Nextjs", "Etherjs", "ThirdWeb", "Redux-Toolkit", "Vercel", "Hardhat"],
-    TechStack: "Nextjs, Etherjs, Thirdweb, Redux-Toolkit, Vercel, Hardhat",
-    associatedWith: "Cadillacs",
-    images: [
-      {
-        id: 1,
-        url: images.xertf.src,
-      },
-    ],
-    liveLink: "https://xrp-etf-token-frontend.vercel.app/",
     gitHubLink: "",
   },
   {

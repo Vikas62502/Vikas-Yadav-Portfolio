@@ -17,7 +17,7 @@ export const ServiceData = [
   },
   {
     heading: "Cloud & DevOps",
-    subHeading: "AWS (ECS, ECR, Lambda, S3, RDS, EC2), Docker, Nginx reverse proxy and CI/CD pipelines",
+    subHeading: "AWS (ECS, ECR, Lambda, S3, RDS, EC2), Docker, Nginx, CI/CD, Winston + Loki + Prometheus + Grafana observability",
   },
   {
     heading: "System Design",

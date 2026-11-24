@@ -17,6 +17,10 @@ export const Skills = [
   "Docker",
   "CI/CD",
   "Nginx",
+  "Winston",
+  "Loki",
+  "Prometheus",
+  "Grafana",
   "Jest",
   "System Design",
   "Java",
@@ -49,6 +53,11 @@ export const TechStack: SkillCategory[] = [
     title: "Cloud & DevOps",
     description: "Containerized, reliable deployments",
     skills: ["AWS ECS", "ECR", "Lambda", "S3", "RDS", "Docker", "CI/CD", "Nginx", "Git", "GitHub"],
+  },
+  {
+    title: "Observability",
+    description: "Live logs, metrics and production drilldown",
+    skills: ["Winston", "Grafana Loki", "Prometheus", "Grafana"],
   },
   {
     title: "Testing & Security",
