@@ -53,13 +53,13 @@ export const ProjectsData: ProjectType[] = [
     description: "A live job-search workspace that helps you find matching roles, track applications and move from search to interviews faster — built as a full-stack product and shipped on Vercel.",
     highlights: [
       "End-to-end product: search, match and track applications in one place",
-      "Shipped as a production web app at job-search-accelerator-eight.vercel.app",
+      "Shipped as a production web app at vikas-yadav-job-hunt.vercel.app",
     ],
     tags: ["Nextjs", "TypeScript", "Vercel"],
     TechStack: "Next.js, TypeScript, React, Vercel",
     images: [],
     preview: "jobs",
-    liveLink: "https://job-search-accelerator-eight.vercel.app/",
+    liveLink: "https://vikas-yadav-job-hunt.vercel.app/",
     gitHubLink: "",
   },
   {
