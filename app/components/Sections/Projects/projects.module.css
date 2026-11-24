@@ -343,25 +343,44 @@
 .projectButtons {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: .75rem;
 }
 
 .projectButtons .buttonLink {
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  flex: 0 0 auto;
+  white-space: nowrap;
   text-align: center;
-  padding: 10px 20px;
-  font-size: 1.25rem;
+  padding: .55rem 1.15rem;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
   color: white;
   border: 1px solid #ffffff66;
   border-radius: 50px;
   cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.projectButtons .buttonLink:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 .projectButtons .primaryLink {
   background: var(--accent);
+  border-color: var(--accent);
+}
+
+.projectButtons .primaryLink:hover {
+  filter: brightness(1.08);
   border-color: var(--accent);
 }
 
@@ -416,8 +435,7 @@
   }
 
   .projectButtons {
-    flex-direction: row;
-    gap: 1rem;
+    gap: .75rem;
   }
 
   .aboutProject {
